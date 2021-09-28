@@ -1,0 +1,62 @@
+.togglebutton {
+    opacity: 0;
+    display: none;
+}
+
+.response {
+    width: 100%;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.emoji_section {
+    top: 10vh;
+}
+
+.chat_msg_section {
+    max-width: 40rem;
+    overflow: auto;
+    height: auto;
+}
+
+.mainUserMsg {
+    justify-content: right;
+}
+
+#sideBarMsg {
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.msgContent {
+    height: 87vh;
+    overflow: auto;
+}
+
+.msg_side_show {
+    max-width: 13rem;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1023px) {
+    .response {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 10;
+        opacity: 1;
+        transition: .4s ease all;
+        overflow: hidden;
+
+    }
+
+    .togglebutton {
+        opacity: 1;
+        display: block;
+    }
+}
