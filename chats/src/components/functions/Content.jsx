@@ -1,15 +1,19 @@
-import React, {useEffect, useRef,useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
-const MsgContent = ({chatData, userData}) => {
-    const messageEl = useRef(null);
+const Content = ({chatData, userData}) => {
+    const messageEl = useRef(false);
+    const msgContent = () => {
+        messageEl.current.addEventListener('DOMNodeInserted', event => {
+            const {currentTarget: target} = event;
+            target.scroll({top: target.scrollHeight, behavior: 'smooth'});
+        });
+    }
     useEffect(() => {
-        if (messageEl) {
-            messageEl.current.addEventListener('DOMNodeInserted', event => {
-                const {currentTarget: target} = event;
-                target.scroll({top: target.scrollHeight, behavior: 'smooth'});
-            });
-        }
-    })
+        const timer = setTimeout(() => {
+            msgContent()
+        }, 2000);
+        return () => clearTimeout(timer);
+    }, []);
     return (
         chatData !== false &&
         <>
@@ -38,4 +42,4 @@ const MsgContent = ({chatData, userData}) => {
         </>
     );
 };
-export default MsgContent;
+export default Content;

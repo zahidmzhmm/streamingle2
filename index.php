@@ -26,12 +26,26 @@ if (isset($_SERVER['HTTP_X_API_KEY'])) {
         } elseif ($request['page'] === 'chats') {
             $user_id = $core->request("user_id");
             $chats = $core->view_all("select * from chats where fromUserId='$user_id' order by id desc");
-            if ($chats == true) {
+            $chats2 = $core->view_all("select * from chats where toUserId='$user_id' order by id desc");
+            if (count($chats) > 0) {
                 foreach ($chats as $item => $data) {
                     $toUserId = $data['toUserId'];
                     $udata = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE id='$toUserId' limit 1");
                     $array[$item]['id'] = $data['id'];
                     $array[$item]['toUserId'] = $toUserId;
+                    $array[$item]['fullName'] = isset($udata['fullname']) ? $udata['fullname'] : '';
+                    $array[$item]['lowPhoto'] = isset($udata['lowPhotoUrl']) ? $udata['lowPhotoUrl'] : '';
+                    $array[$item]['message'] = $data['message'];
+                    $array[$item]['read_usr'] = $data['read_usr'];
+                }
+                $core::response("Success", 200, 'success', $array);
+            }
+            if (count($chats2) > 0) {
+                foreach ($chats2 as $item => $data) {
+                    $fromUserId = $data['fromUserId'];
+                    $udata = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE id='$fromUserId' limit 1");
+                    $array[$item]['id'] = $data['id'];
+                    $array[$item]['toUserId'] = $fromUserId;
                     $array[$item]['fullName'] = isset($udata['fullname']) ? $udata['fullname'] : '';
                     $array[$item]['lowPhoto'] = isset($udata['lowPhotoUrl']) ? $udata['lowPhotoUrl'] : '';
                     $array[$item]['message'] = $data['message'];
@@ -67,20 +81,39 @@ if (isset($_SERVER['HTTP_X_API_KEY'])) {
             }
         } elseif ($request['page'] === 'chatsFind') {
             $id = $core->request("id");
-            $data = $core->view("select * FROM chats WHERE `id`='$id' limit 1");
-            $toUserId = $data['toUserId'];
-            $fromUserId = $data['fromUserId'];
-            $data2 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$toUserId' limit 1");
-            $data3 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$fromUserId' limit 1");
-            $messages = $core->view_all("select * FROM messages WHERE `chatId`='$id'");
-            $array['chats'] = $data;
-            $array['user1'] = $data3;
-            $array['user2'] = $data2;
-            $array['messages'] = $messages;
-            if ($data == true) {
-                $core::response("Success", 200, "success", $array);
+            $user_id = $core->request("user");
+            if (empty($id) || empty($user_id)) {
+                $core::response("Empty Data");
             } else {
-                $core::response("Wrong User ID");
+                $chats1 = $core->view("select * FROM chats WHERE `id`='$id'and`fromUserId`='$user_id' limit 1");
+                $chats2 = $core->view("select * FROM chats WHERE `id`='$id'and`toUserId`='$user_id' limit 1");
+                if ($chats1 == true) {
+                    $fromUserId = $chats1['fromUserId'];
+                    $toUserId = $chats1['toUserId'];
+                    $user1 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$fromUserId' limit 1");
+                    $user2 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$toUserId' limit 1");
+                    $messages = $core->view_all("select * FROM messages WHERE `chatId`='$id'");
+                    $array['chats'] = $chats1;
+                    $array['user1'] = $user1;
+                    $array['user2'] = $user2;
+                    $array['messages'] = $messages;
+                    $core::response("Success", 200, "success", $array);
+                }
+                if ($chats2 == true) {
+                    $fromUserId = $chats2['fromUserId'];
+                    $toUserId = $chats2['toUserId'];
+                    $user1 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$toUserId' limit 1");
+                    $user2 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$fromUserId' limit 1");
+                    $messages = $core->view_all("select * FROM messages WHERE `chatId`='$id'");
+                    $array['chats'] = $chats2;
+                    $array['user1'] = $user1;
+                    $array['user2'] = $user2;
+                    $array['messages'] = $messages;
+                    $core::response("Success", 200, "success", $array);
+                }
+                if ($chats1 == false && $chats2 == false) {
+                    $core::response("Data not found");
+                }
             }
         } elseif ($request['page'] === 'sendMessage') {
             $chatId = $core->request('chatId');

@@ -1,10 +1,10 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const MsgList = ({data, setToggle, userData}) => {
+const MsgList = ({data, userData}) => {
     return (
         <>
-            <li className="" onClick={() => setToggle(true)} style={{width: '100%'}}>
+            <li className="" style={{width: '100%'}}>
                 <NavLink style={{width: '100%'}} exact={true}
                          activeClassName="bg-ac-clr text-txt-clr"
                          className="p-3 waves-effect waves-dark"
@@ -17,7 +17,7 @@ const MsgList = ({data, setToggle, userData}) => {
                                 objectFit: 'cover',
                                 borderRadius: '50%'
                             }} src={data.lowPhoto} alt=""/>
-                            <div className="w-3 h-3 absolute border-2 border-white"
+                            {/*<div className="w-3 h-3 absolute border-2 border-white"
                                  style={data.read_usr == 1 ? {
                                      background: 'rgb(16,185,160)',
                                      borderRadius: '50%',
@@ -29,8 +29,7 @@ const MsgList = ({data, setToggle, userData}) => {
                                      top: '1px',
                                      left: '0'
                                  }}>
-
-                            </div>
+                            </div>*/}
                         </div>
                         <div className="flex flex-col">
                             <h6>{data.fullName}</h6>

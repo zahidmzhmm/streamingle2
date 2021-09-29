@@ -1,12 +1,11 @@
 import React from 'react';
 
-const UserTop = ({setToggle, chatData, userData}) => {
+const TopBar = ({chatData}) => {
     return (
         <>
             <div className="row mb-0 page-titles">
                 <div className="px-3 topbarr flex items-center justify-between" style={{width: '100%'}}>
-                    <div onClick={() => setToggle(false)}
-                         className="togglebutton cursor-pointer mr-3 text-purple-500">
+                    <div className="togglebutton cursor-pointer mr-3 text-purple-500">
                         <i className="fa fa-bars"/>
                     </div>
                     <div className="flex items-center ">
@@ -37,4 +36,4 @@ const UserTop = ({setToggle, chatData, userData}) => {
     );
 };
 
-export default UserTop;
+export default TopBar;

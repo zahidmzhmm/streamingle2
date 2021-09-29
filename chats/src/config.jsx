@@ -1,5 +1,5 @@
-export const redirectURI = "http://localhost/chat.app";
-export const apiURI = "http://localhost/chat.app/index.php?page=";
+export const redirectURI = "https://streamingle.com";
+export const apiURI = "https://streamingle.com/api/v3/index.php?page=";
 export const headers = {
     'x-api-key': 'admin12123'
 };

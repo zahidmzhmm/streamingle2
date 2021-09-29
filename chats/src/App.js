@@ -1,31 +1,29 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Private from "./components/chats/Private";
 import Login from "./components/Login";
-
+import Chats from "./components/Chats";
 
 const App = () => {
     const userData = localStorage.getItem('userData');
     return (
-        userData == null ?
+        userData != null ?
             <Router>
                 <Route exact path="/users/:authKey">
                     <Login/>
+                </Route>
+                <Route exact path="/chats">
+                    <Chats/>
+                </Route>
+                <Route exact path="/chats/:chatId"
+                       render={(props) => <Chats chatId={props} {...props} />}/>
+                <Route exact path="/">
+                    <Chats/>
                 </Route>
             </Router>
             :
             <Router>
                 <Route exact path="/users/:authKey">
                     <Login/>
-                </Route>
-                <Route exact path="/chats">
-                    <Private page="chats"/>
-                </Route>
-                <Route exact path="/">
-                    <Private page="chats"/>
-                </Route>
-                <Route exact path="/chats/:keyId">
-                    <Private page="chats"/>
                 </Route>
             </Router>
     )

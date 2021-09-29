@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MsgChoose = ({setToggle, access, userData}) => {
+const MsgNull = ({setToggle, access, userData}) => {
     return (
         <>
             <div className="flex items-center flex-col justify-center"
@@ -23,4 +23,4 @@ const MsgChoose = ({setToggle, access, userData}) => {
     );
 };
 
-export default MsgChoose;
+export default MsgNull;
