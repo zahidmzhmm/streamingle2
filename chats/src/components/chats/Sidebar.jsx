@@ -30,7 +30,7 @@ class Sidebar extends React.Component {
                         <nav className="bg-sr-clr" style={{width: '100%'}}>
                             <ul style={{width: '100%'}} id="sideBarMsg">
                                 {
-                                    this.state.chats.status == 200 && this.state.chats.data.map(data => (
+                                    this.state.chats.status === 200 && this.state.chats.data.map(data => (
                                         <MsgList data={data} setToggle={this.setToggle} key={data.id}
                                                  userData={this.userData}/>))
                                 }

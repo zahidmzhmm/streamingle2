@@ -9,7 +9,7 @@ const Private = ({page}) => {
     const [toggle, setToggle] = React.useState(true);
     let localUserData = localStorage.getItem('userData');
     let userData = decryptData(localUserData);
-    let { keyId } = useParams();
+    let {keyId} = useParams();
     return (
         <>{
             <div className="grid lg:grid-cols-3 md:grid-cols-1 relative">
