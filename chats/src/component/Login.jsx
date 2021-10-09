@@ -2,7 +2,7 @@ import React from 'react';
 import {useParams} from 'react-router';
 import {apiURI, headers} from "../config";
 import axios from "axios";
-import {encryptData} from "./util";
+import {encryptData} from "../util";
 
 const Login = () => {
     const {authKey} = useParams();

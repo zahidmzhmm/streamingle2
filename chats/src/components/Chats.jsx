@@ -55,7 +55,6 @@ class Chats extends React.Component {
             .then(json => json.status === 200 &&
                 this.setState({chatsUpdate: true, messageUpdate: true, messageInput: ""})
             )
-        window.location.reload();
     }
 
     render() {

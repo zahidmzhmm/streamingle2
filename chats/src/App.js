@@ -1,7 +1,8 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
-import Login from "./components/Login";
-import Chats from "./components/Chats";
+import Login from "./component/Login";
+import Chats from "./component/Chats";
+import Messages from "./component/Messages";
 
 const App = () => {
     const userData = localStorage.getItem('userData');
@@ -11,13 +12,14 @@ const App = () => {
                 <Route exact path="/users/:authKey">
                     <Login/>
                 </Route>
-                <Route exact path="/chats">
-                    <Chats/>
+                <Route exact path="/chats/:chatId">
+                    <Messages/>
                 </Route>
-                <Route exact path="/chats/:chatId"
-                       render={(props) => <Chats chatId={props} {...props} />}/>
+                <Route exact path="/chats">
+                    <Chats userData={userData}/>
+                </Route>
                 <Route exact path="/">
-                    <Chats/>
+                    <Chats userData={userData}/>
                 </Route>
             </Router>
             :
