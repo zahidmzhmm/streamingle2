@@ -124,25 +124,29 @@ if (isset($_SERVER['HTTP_X_API_KEY'])) {
                 $core::response("Params Missing");
             } else {
                 $data = $core->view("select * FROM chats WHERE `id`='$chatId' limit 1");
-                $imgUrl = $core->request('imgUrl');
-                $stickerId = $core->request('stickerId');
-                $stickerImgUrl = $core->request('stickerImgUrl');
-                $createAt = time();
-                $ip_addr = $core::ip_addr();
-                $u_agent = $core::u_agent();
-                $core->query("UPDATE `chats` SET `message`='$message' where id='$chatId'");
-                $insert = $core->query("INSERT INTO messages (chatId,fromUserId, toUserId, message, imgUrl, stickerId, stickerImgUrl, createAt, ip_addr, u_agent) value ('$chatId','$fromUserId', '$toUserId', '$message', '$imgUrl', '$stickerId', '$stickerImgUrl', '$createAt', '$ip_addr', '$u_agent')");
-                if ($insert == true) {
-                    $data2 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$toUserId' limit 1");
-                    $data3 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$fromUserId' limit 1");
-                    $messages = $core->view_all("select * FROM messages WHERE `chatId`='$chatId'");
-                    $array['chats'] = $data;
-                    $array['user1'] = $data3;
-                    $array['user2'] = $data2;
-                    $array['messages'] = $messages;
-                    $core::response("Success", 200, "success", $array);
+                if ($data !== null) {
+                    $imgUrl = $core->request('imgUrl');
+                    $stickerId = $core->request('stickerId');
+                    $stickerImgUrl = $core->request('stickerImgUrl');
+                    $createAt = time();
+                    $ip_addr = $core::ip_addr();
+                    $u_agent = $core::u_agent();
+                    $core->query("UPDATE `chats` SET `message`='$message' where id='$chatId'");
+                    $insert = $core->query("INSERT INTO messages (chatId,fromUserId, toUserId, message, imgUrl, stickerId, stickerImgUrl, createAt, ip_addr, u_agent) value ('$chatId','$fromUserId', '$toUserId', '$message', '$imgUrl', '$stickerId', '$stickerImgUrl', '$createAt', '$ip_addr', '$u_agent')");
+                    if ($insert == true) {
+                        $data2 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$toUserId' limit 1");
+                        $data3 = $core->view("select id, state, fullname, lowPhotoUrl, verify, pro, free_messages_count,passw FROM users WHERE `id`='$fromUserId' limit 1");
+                        $messages = $core->view_all("select * FROM messages WHERE `chatId`='$chatId'");
+                        $array['chats'] = $data;
+                        $array['user1'] = $data3;
+                        $array['user2'] = $data2;
+                        $array['messages'] = $messages;
+                        $core::response("Success", 200, "success", $array);
+                    } else {
+                        $core::response("Something Problem");
+                    }
                 } else {
-                    $core::response("Something Problem");
+                    $core::response("Chats not found");
                 }
             }
         } else {
