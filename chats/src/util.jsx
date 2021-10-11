@@ -1,15 +1,10 @@
-import CryptoJS from 'crypto-js';
-import {salt} from "./config";
+import {Base64} from "js-base64";
 
-export const encryptData = (data) =>
-    CryptoJS.AES.encrypt(JSON.stringify(data), salt).toString();
+export const encryptData = (data) => {
+    return Base64.encode(JSON.stringify(data))
+}
 
 
-export const decryptData = (ciphertext) => {
-    const bytes = CryptoJS.AES.decrypt(ciphertext, salt);
-    try {
-        return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    } catch (err) {
-        return null;
-    }
+export const decryptData = (data) => {
+    return JSON.parse(Base64.decode(data));
 }

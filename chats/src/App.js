@@ -13,7 +13,7 @@ const App = () => {
                     <Login/>
                 </Route>
                 <Route exact path="/chats/:chatId">
-                    <Messages/>
+                    <Messages userData={userData}/>
                 </Route>
                 <Route exact path="/chats">
                     <Chats userData={userData}/>

@@ -1,15 +1,20 @@
 import React from 'react';
+import {sendMessage} from '../../renderData';
 
-const ChatForm = ({chats}) => {
+const ChatForm = ({allList, setUpdate}) => {
     const [messageInput, setMessageInput] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const formSubmit = (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('message', messageInput);
+        sendMessage(allList, formData, setUpdate)
+        setMessageInput("");
     }
     return (
         <>
             <form onSubmit={(e) => formSubmit(e)}
-                  className="pb-2 pt-0 px-5 flex items-center justify-around gap-1 absolute left-0 bottom-0"
+                  className="pb-2 pt-0 px-5 flex items-center justify-around gap-1 relative left-0 bottom-0"
                   style={{width: '100%'}}>
                 {
                     open ?

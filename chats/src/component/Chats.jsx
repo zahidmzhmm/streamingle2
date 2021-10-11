@@ -1,13 +1,8 @@
 import React from 'react';
-import {importChatsList} from '../render';
+import {importChatsList} from '../renderData';
 import ChatList from "./functions/ChatList";
-import Sidebar from "./functions/Sidebar";
-import Topbar from "./functions/Topbar";
-import Content from "./functions/Content";
-import ChatForm from "./functions/ChatForm";
 import {Link} from "react-router-dom";
 import Default from "./functions/Default";
-import {Container, Row, Col, Button} from "react-bootstrap";
 import './chats.css'
 
 const Chats = ({userData}) => {

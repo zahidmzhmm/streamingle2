@@ -12,9 +12,9 @@ const Topbar = ({chatData}) => {
                         <div className="name">
                             <img className="w-12 h-12 mr-2"
                                  style={{borderRadius: '50%', objectFit: 'cover'}}
-                                 src="/assets/images/users/1.jpg"
+                                 src={chatData !== false && chatData.user2.lowPhotoUrl}
                                  alt=""/>
-                            <h2 className="text-txt-clr font-md mr-2">Zahid</h2>
+                            <h2 className="text-txt-clr font-md mr-2">{chatData !== false && chatData.user2.fullname}</h2>
                             {/*<div className="w-2 h-2 rounded"
                                  style={chatData.active ? {background: 'rgb(16,185,160)'} : {background: 'rgb(179, 86, 11)'}}/>*/}
                         </div>
