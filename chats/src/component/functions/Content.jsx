@@ -22,18 +22,19 @@ const Content = ({chatData}) => {
                     return (
                         <div key={data.id} className="w-100 my-2">
                             <div className={`flex ${data.fromUserId === chatData.user1.id ? 'mainUserMsg' : ''}`}>
-                                {data.fromUserId !== chatData.user1.id &&
+                                {/*{data.fromUserId !== chatData.user1.id &&
                                 <img src={chatData.user2.lowPhotoUrl !== null && chatData.user2.lowPhotoUrl}
                                      className="w-10 mt-2 h-10 mr-2"
-                                     style={{borderRadius: '50%', objectFit: 'cover'}} alt=""/>}
+                                     style={{borderRadius: '50%', objectFit: 'cover'}} alt=""/>}*/}
                                 <div className="px-4 bg-pr-clr rounded-md py-2">
                                     <h2 className="text-white chat_msg_section">{data.message}</h2>
+                                    <img style={{width: '15rem'}} className="mb-3" src={data.imgUrl} alt=""/>
                                     <p style={{fontSize: '11px'}}
                                        className="text-sm flex self-end text-white">{new Date(date).getHours() + ":" + new Date(date).getMinutes() + " " + new Date(date).toDateString()}</p>
                                 </div>
-                                {data.fromUserId === chatData.user1.id &&
+                                {/*{data.fromUserId === chatData.user1.id &&
                                 <img src={chatData.user1.lowPhotoUrl} className="w-10 mt-2 h-10 mr-2"
-                                     style={{borderRadius: '50%', objectFit: 'cover'}} alt=""/>}
+                                     style={{borderRadius: '50%', objectFit: 'cover'}} alt=""/>}*/}
                             </div>
                         </div>
                     )

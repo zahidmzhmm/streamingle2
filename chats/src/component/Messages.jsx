@@ -39,10 +39,9 @@ const Messages = ({userData}) => {
                             <aside className="bg-sr-clr border-2 border-ac-clr">
                                 <div>
                                     <div className="flex pb-5 pt-5 items-center shadow mx-0">
-                                        <Link to="/chats"><img className="w-10 h-10 mr-2"
-                                                               src="http://chatvia-light.react.themesbrand.com/static/media/logo.e41f6087.svg"
+                                        <Link to="/chats"><img className="w-50 ml-2 h-10 mr-2"
+                                                               src="https://streamingle.com/api/uploads/logo.png"
                                                                alt=""/></Link>
-                                        <Link to="/" className="font-bold text-2xl">Chats</Link>
                                     </div>
                                     <nav className="bg-sr-clr" style={{width: '100%'}}>
                                         <ul style={{width: '100%'}} id="sideBarMsg">

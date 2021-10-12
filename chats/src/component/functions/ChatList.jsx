@@ -17,7 +17,7 @@ const ChatList = ({data, setUpdate}) => {
                                 height: '40px',
                                 objectFit: 'cover',
                                 borderRadius: '50%'
-                            }} src={data.lowPhoto} alt=""/>
+                            }} src={data.lowPhoto !== "" ? data.lowPhoto : "https://streamingle.com/api/uploads/user.jpeg"} alt=""/>
                             {/*<div className="w-3 h-3 absolute border-2 border-white"
                                  style={data.read_usr == 1 ? {
                                      background: 'rgb(16,185,160)',
@@ -36,6 +36,7 @@ const ChatList = ({data, setUpdate}) => {
                             <h6>{data.fullName}</h6>
                             <p className="text-sm mt-1 msg_side_show">
                                 {data.message.length > 20 ? data.message.substring(0, 20) + "..." : data.message}</p>
+                            {data.imgUrl !== "" && data.message === "" ? "Image" : ""}
                         </div>
                     </div>
                 </NavLink>
