@@ -71,4 +71,19 @@ class Core
         if (isset($_SERVER['HTTP_USER_AGENT'])) $u_agent = $_SERVER['HTTP_USER_AGENT'];
         return $u_agent;
     }
+
+    public function uploads($file, $dir = "../uploads/")
+    {
+        $file_tmp = $file['tmp_name'];
+        $file_name = $file['name'];
+        $file_exp = explode('.', $file_name);
+        $file_ext = strtolower(end($file_exp));
+        $filename = substr(sha1(md5(mt_rand(10001, 9999999) . time())), 0, 14) . '.' . $file_ext;
+        $destination = $dir . '/' . $filename;
+        if (file_exists($destination)) {
+            unlink($destination);
+        }
+        move_uploaded_file($file_tmp, $destination);
+        return $filename;
+    }
 }

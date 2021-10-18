@@ -2,11 +2,7 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: *');
-define("API_KEY", "admin12123");
-define("DB_HOST", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "chat.app");
+include "../../sys/config/db.inc.php";
 include "Core.php";
 $core = new Core();
 $request = $_REQUEST;
@@ -116,11 +112,11 @@ if (isset($_SERVER['HTTP_X_API_KEY'])) {
                 }
             }
         } elseif ($request['page'] === 'sendMessage') {
-            $chatId = $core->request('chatId');
-            $fromUserId = $core->request('fromUserId');
-            $toUserId = $core->request('toUserId');
+            $chatId = $core->request('chat_id');
+            $fromUserId = $core->request('from_user');
+            $toUserId = $core->request('to_user');
             $message = $core->request('message');
-            if (empty($chatId) || empty($fromUserId) || empty($toUserId) || empty($message)) {
+            if (empty($chatId) || empty($fromUserId) || empty($toUserId)) {
                 $core::response("Params Missing");
             } else {
                 $data = $core->view("select * FROM chats WHERE `id`='$chatId' limit 1");
@@ -128,6 +124,7 @@ if (isset($_SERVER['HTTP_X_API_KEY'])) {
                     $imgUrl = $core->request('imgUrl');
                     $stickerId = $core->request('stickerId');
                     $stickerImgUrl = $core->request('stickerImgUrl');
+
                     $createAt = time();
                     $ip_addr = $core::ip_addr();
                     $u_agent = $core::u_agent();
