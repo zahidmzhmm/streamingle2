@@ -1,0 +1,584 @@
+{
+  "chats": {
+    "id": "324",
+    "fromUserId": "20",
+    "toUserId": "116",
+    "fromUserId_lastView": "1629656027",
+    "toUserId_lastView": "0",
+    "image": "",
+    "video": "",
+    "message": "",
+    "messageCreateAt": "0",
+    "updateAt": "0",
+    "createAt": "1629656027",
+    "removeAt": "0",
+    "removeToUserId": "0",
+    "removeFromUserId": "0",
+    "read_usr": "1"
+  },
+  "user1": {
+    "id": "116",
+    "state": "0",
+    "fullname": "Zahid",
+    "lowPhotoUrl": "https://streamingle.com/photo/thumb_low_eb2aa22.jpg",
+    "verify": "1",
+    "pro": "0",
+    "free_messages_count": "0",
+    "passw": "af17e283c9d71dff9815557e13d92cc1",
+    "login": "zahid",
+    "balance": "1194"
+  },
+  "user2": {
+    "id": "20",
+    "state": "0",
+    "fullname": "Kate",
+    "lowPhotoUrl": "http://streamingle.com/photo/thumb_low_g9dg1gg.jpg",
+    "verify": "1",
+    "pro": "1",
+    "free_messages_count": "3183",
+    "passw": "f62bb173c78e56a129d3419235591ddf",
+    "login": "katee",
+    "balance": "598"
+  },
+  "messages": [
+    {
+      "id": "2979",
+      "chatId": "324",
+      "msgType": "0",
+      "fromUserId": "20",
+      "toUserId": "116",
+      "message": "hey",
+      "imgUrl": "",
+      "videoImgUrl": "",
+      "videoUrl": "",
+      "audioUrl": "",
+      "stickerId": "0",
+      "stickerImgUrl": "",
+      "area": "",
+      "country": "",
+      "city": "",
+      "lat": null,
+      "lng": null,
+      "createAt": "1629656027",
+      "removeAt": "0",
+      "removeFromUserId": "0",
+      "removeToUserId": "0",
+      "seenAt": "0",
+      "seenFromUserId": "0",
+      "seenToUserId": "0",
+      "u_agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36",
+      "ip_addr": "196.217.3.255",
+      "read_usr": "1"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "1",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/1.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "2",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/2.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "3",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/3.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "4",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/4.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "5",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/5.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "6",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/6.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "7",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/7.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "8",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/8.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "9",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/9.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "10",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/10.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "11",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/11.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "12",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/12.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "13",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/13.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "14",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/14.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "15",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/15.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "16",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/16.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "17",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/17.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "18",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/18.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "19",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/19.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "20",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/20.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "21",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/21.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "22",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/22.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "23",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/23.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "24",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/24.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "25",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/25.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "26",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/26.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "27",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/27.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    }
+  ]
+},
+{
+  "chats": {
+    "id": "282",
+    "fromUserId": "116",
+    "toUserId": "111",
+    "fromUserId_lastView": "1629629005",
+    "toUserId_lastView": "0",
+    "image": "",
+    "video": "",
+    "message": "",
+    "messageCreateAt": "0",
+    "updateAt": "0",
+    "createAt": "1629629005",
+    "removeAt": "0",
+    "removeToUserId": "0",
+    "removeFromUserId": "0",
+    "read_usr": "1"
+  },
+  "user1": {
+    "id": "116",
+    "state": "0",
+    "fullname": "Zahid",
+    "lowPhotoUrl": "https://streamingle.com/photo/thumb_low_eb2aa22.jpg",
+    "verify": "1",
+    "pro": "0",
+    "free_messages_count": "0",
+    "passw": "af17e283c9d71dff9815557e13d92cc1",
+    "login": "zahid",
+    "balance": "1194"
+  },
+  "user2": {
+    "id": "111",
+    "state": "0",
+    "fullname": "alienssss",
+    "lowPhotoUrl": "",
+    "verify": "0",
+    "pro": "1",
+    "free_messages_count": "0",
+    "passw": "a06bf04a498233296efca9a8cc05c9e3",
+    "login": "Aliennnn",
+    "balance": "0"
+  },
+  "messages": [
+    {
+      "id": "2917",
+      "chatId": "282",
+      "msgType": "0",
+      "fromUserId": "116",
+      "toUserId": "111",
+      "message": "Test",
+      "imgUrl": "",
+      "videoImgUrl": "",
+      "videoUrl": "",
+      "audioUrl": "",
+      "stickerId": "0",
+      "stickerImgUrl": "",
+      "area": "",
+      "country": "",
+      "city": "",
+      "lat": null,
+      "lng": null,
+      "createAt": "1629629005",
+      "removeAt": "0",
+      "removeFromUserId": "0",
+      "removeToUserId": "0",
+      "seenAt": "0",
+      "seenFromUserId": "0",
+      "seenToUserId": "0",
+      "u_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36",
+      "ip_addr": "114.130.157.113",
+      "read_usr": "1"
+    }
+  ],
+  "stickers": [
+    {
+      "id": "1",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/1.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "2",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/2.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "3",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/3.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "4",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/4.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "5",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/5.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "6",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/6.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "7",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/7.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "8",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/8.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "9",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/9.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "10",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/10.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "11",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/11.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "12",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/12.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "13",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/13.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "14",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/14.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "15",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/15.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "16",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/16.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "17",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/17.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "18",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/18.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "19",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/19.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "20",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/20.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "21",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/21.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "22",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/22.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "23",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/23.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "24",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/24.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "25",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/25.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "26",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/26.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    },
+    {
+      "id": "27",
+      "cost": "0",
+      "category": "0",
+      "imgUrl": "http://streamingle.com/stickers/27.png",
+      "createAt": "1615348127",
+      "removeAt": "0"
+    }
+  ]
+}

@@ -26,6 +26,11 @@ class Core
         return mysqli_query($this->db(), $sql);
     }
 
+    public function real_escape($string)
+    {
+        return mysqli_real_escape_string($this->db(), $string);
+    }
+
     public function view($sql)
     {
         $query = mysqli_query($this->db(), $sql);
