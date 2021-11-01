@@ -1,9 +1,9 @@
 import React from 'react';
 import {importChatsList} from '../renderData';
 import ChatList from "./functions/ChatList";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import Default from "./functions/Default";
-import './chats.css'
+import './chats.css';
 
 const Chats = ({userData}) => {
     const [chats, setChats] = React.useState(null);
@@ -15,6 +15,8 @@ const Chats = ({userData}) => {
             }
         }
     )
+    const [respon, setRespon] = React.useState(true);
+    const history = useHistory();
     if (chats !== null) {
         return (
             <>
@@ -29,13 +31,14 @@ const Chats = ({userData}) => {
                                 </div>
                                 <nav className="bg-sr-clr" style={{width: '100%'}}>
                                     <ul style={{width: '100%'}} id="sideBarMsg">
-                                        {chats.data.map((data, index) => <ChatList key={index} data={data}/>)}
+                                        {chats.data.map((data, index) => <ChatList setRespon={setRespon} key={index} data={data}/>)}
                                     </ul>
                                 </nav>
                             </div>
                         </aside>
+
                     </div>
-                    <div className="xl:col-span-3 md:col-span-2">
+                    <div className="xl:col-span-3 md:col-span-2 d-lg-block d-none">
                         <Default access={false}/>
                     </div>
                 </div>

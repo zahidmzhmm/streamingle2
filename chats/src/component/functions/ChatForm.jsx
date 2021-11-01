@@ -1,6 +1,7 @@
 import React from 'react';
 import {sendMessage} from '../../renderData';
 import Picker from 'emoji-picker-react';
+import {redirectURI} from "../../config";
 
 const ChatForm = ({allList, setUpdate}) => {
     const [messageInput, setMessageInput] = React.useState("");
@@ -11,6 +12,7 @@ const ChatForm = ({allList, setUpdate}) => {
         setOpen(false)
     };
     const [open, setOpen] = React.useState(false);
+    const [openStickers, setStickers] = React.useState(false);
     const formSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();
@@ -23,6 +25,14 @@ const ChatForm = ({allList, setUpdate}) => {
         formData.append('image', e.target.files[0]);
         sendMessage(allList, formData, setUpdate)
     }
+    const submitSticker = (sticker, stickerId) => {
+        const formData = new FormData();
+        formData.append('stickerId', stickerId);
+        formData.append('stickerImgUrl', sticker);
+        sendMessage(allList, formData, setUpdate)
+        setStickers(false);
+    }
+    const {stickers} = allList;
     return (
         <>
             <form onSubmit={(e) => formSubmit(e)}
@@ -32,7 +42,8 @@ const ChatForm = ({allList, setUpdate}) => {
                     open ?
                         <div onClick={() => setOpen(false)}
                              className="bg-pr-clr rounded  cursor-pointer text-white p-1 md:p-2 flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                                 viewBox="0 0 24 24"
                                  stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                                       d="M6 18L18 6M6 6l12 12"/>
@@ -50,8 +61,14 @@ const ChatForm = ({allList, setUpdate}) => {
                             </svg>
                         </div>
                 }
-                <div
-                    className="bg-pr-clr rounded  cursor-pointer text-white p-1 md:p-2 flex justify-center items-center">
+                <div className={`stickers ${openStickers === true ? "d-block" : "d-none"}`}>
+                    {stickers.map((data, index) => (
+                        <div key={index}><img onClick={() => submitSticker(data.imgUrl, data.id)} src={data.imgUrl}
+                                              alt=""/></div>
+                    ))}
+                </div>
+                <div onClick={() => setStickers(!openStickers)}
+                     className="bg-pr-clr rounded  cursor-pointer text-white p-1 md:p-2 flex justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

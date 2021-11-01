@@ -5,17 +5,19 @@ import {importAllList, importChatsList} from "../renderData";
 import TopBar from "./functions/Topbar";
 import Content from "./functions/Content";
 import ChatForm from "./functions/ChatForm";
+import {redirectURI} from "../config";
 
 const Messages = ({userData}) => {
         const {chatId} = useParams();
         const [chatIdUpdate, setChatIdUpdate] = React.useState(chatId);
         const [allList, setAllList] = React.useState(null);
         const [chats, setChats] = React.useState(null);
-        const [update, setUpdate] = React.useState(true);
+        const [update, setUpdate] = React.useState(false);
         React.useEffect(() => {
                 if (chatId !== chatIdUpdate) {
                     setChatIdUpdate(chatId)
-                    setUpdate(true)
+                    setUpdate(true);
+                    setRespon(true);
                 }
                 if (update === true) {
                     importChatsList(setChats, userData, setUpdate)
@@ -29,13 +31,13 @@ const Messages = ({userData}) => {
                 setUpdate(true);
             }, 5000);
             return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-        }, [])
-
+        }, []);
+        const [respon, setRespon] = React.useState(true);
         if (allList !== null && chatId !== null && chats !== null) {
             return (
                 <>
-                    <div className="grid  md:grid-cols-3 xl:grid-cols-4">
-                        <div className="">
+                    <div className="grid md:grid-cols-3 xl:grid-cols-4">
+                        <div className={`${respon === true ? 'd-none' : 'd-block'} d-lg-block`}>
                             <aside className="bg-sr-clr border-2 border-ac-clr">
                                 <div>
                                     <div className="flex pb-5 pt-5 items-center shadow mx-0">
@@ -45,23 +47,32 @@ const Messages = ({userData}) => {
                                     </div>
                                     <nav className="bg-sr-clr" style={{width: '100%'}}>
                                         <ul style={{width: '100%'}} id="sideBarMsg">
-                                            {chats.data.map((data, index) => <ChatList setUpdate={setUpdate} key={index}
+                                            {chats.data.map((data, index) => <ChatList setRespon={setRespon}
+                                                                                       setUpdate={setUpdate} key={index}
                                                                                        data={data}/>)}
                                         </ul>
                                     </nav>
                                 </div>
                             </aside>
                         </div>
-                        <div className="xl:col-span-3 md:col-span-2">
-                            <TopBar chatData={allList.data}/>
+                        <div
+                            className={`xl:col-span-3 overflow-hidden md:col-span-2 ${respon === false ? 'd-none' : 'd-block'}`}>
+                            <TopBar setres={setRespon} res={respon} chatData={allList.data}/>
                             <Content chatData={allList.data}/>
-                            <ChatForm allList={allList.data} setUpdate={setUpdate}/>
+                            {allList.data.user1.balance > 0 || allList.data.user1.free_messages_count != 0
+                                ? <ChatForm allList={allList.data} setUpdate={setUpdate}/>
+                                :
+                                <>
+                                    <div className="text-center bg-light py-2">You have no message please <a
+                                        className="text-danger" href={redirectURI}>buy more message</a></div>
+                                </>
+                            }
                         </div>
                     </div>
                 </>
             );
         } else {
-            return null
+            return "Loading..";
         }
     }
 ;

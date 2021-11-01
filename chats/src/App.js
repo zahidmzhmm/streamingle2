@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import Login from "./component/Login";
 import Chats from "./component/Chats";
 import Messages from "./component/Messages";
+import {apiURI, redirectURI} from "./config";
 
 const App = () => {
     const userData = localStorage.getItem('userData');
