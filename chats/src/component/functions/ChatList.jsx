@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const ChatList = ({setRespon, data, setUpdate}) => {
+const ChatList = ({uData, setRespon, data, setUpdate}) => {
     return (
         <>
             <li className="" style={{width: '100%'}}>

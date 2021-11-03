@@ -4,10 +4,12 @@ import ChatList from "./functions/ChatList";
 import {Link, useHistory} from "react-router-dom";
 import Default from "./functions/Default";
 import './chats.css';
+import {decryptData} from "../util";
 
 const Chats = ({userData}) => {
     const [chats, setChats] = React.useState(null);
     const [update, setUpdate] = React.useState(true);
+    const udata = decryptData(userData);
     React.useEffect(() => {
             if (update === true) {
                 importChatsList(setChats, userData, setUpdate);
@@ -31,7 +33,8 @@ const Chats = ({userData}) => {
                                 </div>
                                 <nav className="bg-sr-clr" style={{width: '100%'}}>
                                     <ul style={{width: '100%'}} id="sideBarMsg">
-                                        {chats.data.map((data, index) => <ChatList setRespon={setRespon} key={index} data={data}/>)}
+                                        {chats.data.map((data, index) =>
+                                            <ChatList udata={udata} setRespon={setRespon} key={index} data={data}/>)}
                                     </ul>
                                 </nav>
                             </div>

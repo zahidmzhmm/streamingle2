@@ -4,12 +4,16 @@ import Login from "./component/Login";
 import Chats from "./component/Chats";
 import Messages from "./component/Messages";
 import {apiURI, redirectURI} from "./config";
+import AuthLogin from "./component/AuthLogin";
 
 const App = () => {
     const userData = localStorage.getItem('userData');
     return (
         userData != null ?
             <Router>
+                <Route exact path="/users/:authKey/chat/:userId">
+                    <AuthLogin/>
+                </Route>
                 <Route exact path="/users/:authKey">
                     <Login/>
                 </Route>
@@ -27,6 +31,9 @@ const App = () => {
             <Router>
                 <Route exact path="/users/:authKey">
                     <Login/>
+                </Route>
+                <Route exact path="/users/:authKey/chat/:userId">
+                    <AuthLogin/>
                 </Route>
             </Router>
     )

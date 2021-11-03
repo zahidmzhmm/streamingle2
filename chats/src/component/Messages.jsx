@@ -6,13 +6,15 @@ import TopBar from "./functions/Topbar";
 import Content from "./functions/Content";
 import ChatForm from "./functions/ChatForm";
 import {redirectURI} from "../config";
+import {decryptData} from "../util";
 
 const Messages = ({userData}) => {
         const {chatId} = useParams();
         const [chatIdUpdate, setChatIdUpdate] = React.useState(chatId);
         const [allList, setAllList] = React.useState(null);
         const [chats, setChats] = React.useState(null);
-        const [update, setUpdate] = React.useState(false);
+        const [update, setUpdate] = React.useState(true);
+        const udata = decryptData(userData)
         React.useEffect(() => {
                 if (chatId !== chatIdUpdate) {
                     setChatIdUpdate(chatId)
@@ -34,6 +36,7 @@ const Messages = ({userData}) => {
         }, []);
         const [respon, setRespon] = React.useState(true);
         if (allList !== null && chatId !== null && chats !== null) {
+            console.log(chats.data)
             return (
                 <>
                     <div className="grid md:grid-cols-3 xl:grid-cols-4">
@@ -47,9 +50,11 @@ const Messages = ({userData}) => {
                                     </div>
                                     <nav className="bg-sr-clr" style={{width: '100%'}}>
                                         <ul style={{width: '100%'}} id="sideBarMsg">
-                                            {chats.data.map((data, index) => <ChatList setRespon={setRespon}
-                                                                                       setUpdate={setUpdate} key={index}
-                                                                                       data={data}/>)}
+                                            {chats.data.map((data, index) =>
+                                                <ChatList setRespon={setRespon}
+                                                          uData={udata}
+                                                          setUpdate={setUpdate} key={index}
+                                                          data={data}/>)}
                                         </ul>
                                     </nav>
                                 </div>
