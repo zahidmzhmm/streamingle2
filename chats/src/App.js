@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import Login from "./component/Login";
 import Chats from "./component/Chats";
 import Messages from "./component/Messages";
-import {apiURI, redirectURI} from "./config";
+import {redirectURI} from "./config";
 import AuthLogin from "./component/AuthLogin";
 
 const App = () => {
@@ -29,6 +29,7 @@ const App = () => {
             </Router>
             :
             <Router>
+                <Route exact path="/" component={window.location.href = redirectURI}/>
                 <Route exact path="/users/:authKey">
                     <Login/>
                 </Route>

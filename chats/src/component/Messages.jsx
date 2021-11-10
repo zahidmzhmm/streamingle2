@@ -36,7 +36,6 @@ const Messages = ({userData}) => {
         }, []);
         const [respon, setRespon] = React.useState(true);
         if (allList !== null && chatId !== null && chats !== null) {
-            console.log(chats.data)
             return (
                 <>
                     <div className="grid md:grid-cols-3 xl:grid-cols-4">
@@ -64,14 +63,22 @@ const Messages = ({userData}) => {
                             className={`xl:col-span-3 overflow-hidden md:col-span-2 ${respon === false ? 'd-none' : 'd-block'}`}>
                             <TopBar setres={setRespon} res={respon} chatData={allList.data}/>
                             <Content chatData={allList.data}/>
-                            {allList.data.user1.balance > 0 || allList.data.user1.free_messages_count != 0
+                            {allList.data.user1.pro == 1
                                 ? <ChatForm allList={allList.data} setUpdate={setUpdate}/>
                                 :
                                 <>
-                                    <div className="text-center bg-light py-2">You have no message please <a
-                                        className="text-danger" href={redirectURI}>buy more message</a></div>
+                                    {
+                                        allList.data.user1.balance > 0
+                                            ? <ChatForm allList={allList.data} setUpdate={setUpdate}/>
+                                            :
+                                            <>
+                                                <div className="text-center bg-light py-2">You have no message please <a
+                                                    className="text-danger" href={redirectURI}>buy more message</a></div>
+                                            </>
+                                    }
                                 </>
                             }
+
                         </div>
                     </div>
                 </>
