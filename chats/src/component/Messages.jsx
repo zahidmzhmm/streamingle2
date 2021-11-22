@@ -31,7 +31,7 @@ const Messages = ({userData}) => {
         React.useEffect(() => {
             const interval = setInterval(() => {
                 setUpdate(true);
-            }, 5000);
+            }, 2000);
             return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
         }, []);
         const [respon, setRespon] = React.useState(true);
@@ -50,7 +50,7 @@ const Messages = ({userData}) => {
                                     <nav className="bg-sr-clr" style={{width: '100%'}}>
                                         <ul style={{width: '100%'}} id="sideBarMsg">
                                             {chats.data.map((data, index) =>
-                                                <ChatList setRespon={setRespon}
+                                                <ChatList chatMsg={allList.data} setRespon={setRespon}
                                                           uData={udata}
                                                           setUpdate={setUpdate} key={index}
                                                           data={data}/>)}

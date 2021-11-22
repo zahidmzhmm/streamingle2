@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const ChatList = ({uData, setRespon, data, setUpdate}) => {
+const ChatList = ({uData, setRespon, data, setUpdate, chatMsg}) => {
     return (
         <>
             <li className="" style={{width: '100%'}}>
@@ -40,7 +40,6 @@ const ChatList = ({uData, setRespon, data, setUpdate}) => {
                                     {data.message.length > 20 ? data.message.substring(0, 20) + "..." : data.message}
                                     {data.imgUrl !== "" && data.message === "" ? "Image" : ""}
                                 </p>
-                                {/*<span className="activeCountMsg">10</span>*/}
                             </div>
                         </div>
                     </div>

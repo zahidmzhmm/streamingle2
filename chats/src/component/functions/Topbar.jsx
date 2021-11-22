@@ -2,6 +2,9 @@ import React from 'react';
 import {redirectURI} from "../../config";
 
 const Topbar = ({chatData, setres, res}) => {
+    const activeUser = chatData.chats.fromUserActive;
+    console.log(activeUser + "<br><br>")
+
     return (
         <>
             <div className="row mb-0 page-titles">

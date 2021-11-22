@@ -34,7 +34,8 @@ const Chats = ({userData}) => {
                                 <nav className="bg-sr-clr" style={{width: '100%'}}>
                                     <ul style={{width: '100%'}} id="sideBarMsg">
                                         {chats.data.map((data, index) =>
-                                            <ChatList udata={udata} setRespon={setRespon} key={index} data={data}/>)}
+                                            <ChatList toUser={udata} udata={udata} setRespon={setRespon} key={index}
+                                                      data={data}/>)}
                                     </ul>
                                 </nav>
                             </div>
